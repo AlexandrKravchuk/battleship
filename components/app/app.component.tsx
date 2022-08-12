@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { TState, TCell, TShipInfo, TGrid, ECellState, EShipType } from '../../types';
 import { Cell } from '../cell/cell.component';
+import { ShipsList } from '../ships-list/ships-list.component';
 import './style.css';
 
 const LAYOUT = [
@@ -66,7 +67,8 @@ export const App = () => {
         } else {
             // cell is not empty - hit, if not hit yet
             if (cellObj.state !== ECellState.Hit) {
-                cellObj.state = ECellState.Hit
+                cellObj.state = ECellState.Hit;
+                stateClone.ships[data.shipIndex].health--;
             }
         }
         setState(stateClone);
@@ -86,7 +88,7 @@ export const App = () => {
         <div className="game-container">
             <div className="game-data">
                 <div className="score">score field</div>
-                <div className="ships">ships container</div>
+                <div className="ships"><ShipsList shipsData={state.ships}/></div>
             </div>
             <div className="game-field">{cells()}</div>
         </div>

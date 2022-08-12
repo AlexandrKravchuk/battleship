@@ -13,10 +13,6 @@
     background-color: rgb(233, 233, 233);
 }
 
-.cell.new {
-    
-}
-
 .cell.miss {
     background-image: url('../../assets/Miss.png');
 }

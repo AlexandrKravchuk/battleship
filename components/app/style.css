@@ -1,61 +1,84 @@
-@media only screen and (max-width: 320px) {
-    /* mobile TDB */
-    .game-data{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-  }
+  @media only screen and (min-width: 480px) {
 
-  @media only screen and (max-width: 480px) {
-    /* tablet TDB */
-    .game-container{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .game-data{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+      /* tablet TBD */
+      .game-container {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .game-data {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 30%;
+      }
+
+      .game-field {
+          width: 30%;
+          padding-bottom: 30%;
+          height: 0;
+      }
+
+      .score {
+          width: 40%;
+          height: 40%;
+          border: 1px solid gray;
+      }
+
+      .ships {
+          height: 60%;
+          width: 60%;
+          border: 1px solid gray;
+      }
   }
 
   @media only screen and (min-width: 900px) {
-    /* desktop */
-    .game-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .game-data{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 20%;
-    }
+      /* desktop */
+      .game-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: stretch;
+      }
 
-    .score{
-        height: 40%;
-        border: 1px solid gray;
-    }
+      .game-data {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          width: 20%;
+      }
 
-    .ships{
-        height: 60%;
-        border: 1px solid gray;
-    }
+      .score {
+          width: 100%;
+          height: 40%;
+          border: 1px solid gray;
+      }
 
-    .game-field{
-        width: 40%;
-        padding-bottom: 40%;
-        height: 0;
-        background-color: white;
-    }
+      .ships {
+          width: 100%;
+          height: 60%;
+          border: 1px solid gray;
+      }
+
+      .game-field {
+          width: 40%;
+          padding-bottom: 40%;
+          height: 0;
+      }
   }
 
   .game-field {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 5px solid orange;
-}
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border: 5px solid orange;
+      background-color: white;
+  }
+
+  .game-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  }

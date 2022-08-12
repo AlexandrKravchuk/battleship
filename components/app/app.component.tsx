@@ -22,7 +22,7 @@ export const App = () => {
     const buildEmptyGrid = (): TGrid => {
         return [...Array(10)].map((e, y) => {
             const newRow = [...Array(10)].map((e, x) => ({
-                coordinates: {x,y},
+                coordinates: { x, y },
                 shipIndex: NaN,
                 state: ECellState.New
             }));
@@ -56,7 +56,20 @@ export const App = () => {
     }, []);
 
     const onFire = (data: TCell) => {
-        console.log(data);
+        const { x, y } = data.coordinates;
+        const stateClone = { ...state };
+        const cellObj = stateClone.grid[y][x];
+
+        if (Number.isNaN(cellObj.shipIndex)) {
+            // cell is empty - miss
+            cellObj.state = ECellState.Miss
+        } else {
+            // cell is not empty - hit, if not hit yet
+            if (cellObj.state !== ECellState.Hit) {
+                cellObj.state = ECellState.Hit
+            }
+        }
+        setState(stateClone);
     }
 
     const cells = (): JSX.Element[] => {
